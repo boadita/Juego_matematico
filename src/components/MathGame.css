@@ -35,7 +35,18 @@
         margin: auto;
     }
 }
-  
+
+header
+{
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  display: flex; 
+  justify-content: space-around; 
+  gap: 10px;
+}
+
+
   .flash-effect {
     background-color: red !important;
     transition: background-color 0.3s ease-in-out;

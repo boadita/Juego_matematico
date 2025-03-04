@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Question from "./Question";
 import Score from "./Score";
 import "./MathGame.css";
+import Header from "./header";
+import Footer from "./footer";
 
 // Importamos los sonidos
 import correctSound from "/sounds/correct.mp3";
@@ -70,6 +72,8 @@ const MathGame = () => {
   const [difficulty, setDifficulty] = useState("easy");
   const [correctStreak, setCorrectStreak] = useState(0);
   const [wrongStreak, setWrongStreak] = useState(0);
+
+  
 
   useEffect(() => {
     if (timeLeft === 0 && !gameOver) {
@@ -154,6 +158,15 @@ const MathGame = () => {
   return (
     <div className={`game-container ${flash ? "flash-effect" : ""}`}>
       <div className="game-box">
+      {gameOver ? (
+          <>
+            <Header />
+          </>
+        ) : (
+          <>
+            <div> </div>
+          </>
+        )}
         <img src="mate.jpg" alt="juego" width="350px" height="auto"></img>
         <h1 className="game-title">🧮 Juego de Preguntas Matemáticas</h1>
         <Score score={score} />
@@ -165,6 +178,8 @@ const MathGame = () => {
             <button onClick={resetGame} className="reset-button">
               🔄 Reiniciar Juego
             </button>
+            <p>🧠 ¡Sigue practicando y mejorarás! 🚀</p>
+            <Footer />
           </>
         ) : (
           <>
