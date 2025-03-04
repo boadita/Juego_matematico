@@ -1,0 +1,56 @@
+.game-container {
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+    height: 100vh; /* Mantiene el alto al 100% de la pantalla */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    padding: 20px;
+    box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+}
+
+/* 📱 Para dispositivos móviles */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column; /* Acomoda los elementos en columna */
+        text-align: center;
+        background: linear-gradient(to bottom, #6a11cb, #2575fc);
+        padding: 10px;
+    }
+}
+
+/* 📊 Para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .game-container {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        padding: 15px;
+    }
+}
+
+/* 🖥️ Para pantallas grandes */
+@media (min-width: 1025px) {
+    .game-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+  
+  .flash-effect {
+    background-color: red !important;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .timer-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .timer-bar {
+    height: 100%;
+    background-color: green;
+    transition: width 1s linear;
+  }
